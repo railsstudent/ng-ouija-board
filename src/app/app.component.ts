@@ -1,7 +1,7 @@
 import { Component, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { EMPTY, of } from 'rxjs';
-import { mergeMap } from 'rxjs/operators';
+import { of } from 'rxjs';
+import { mergeMap, tap } from 'rxjs/operators';
 
 @Component({
     selector: 'app-root',
@@ -23,10 +23,8 @@ export class AppComponent implements OnInit {
     ngOnInit() {
         const toSpell$ = of('ponies');
         const spelling$ = toSpell$.pipe(
-            mergeMap(word => {
-                console.log('word', word);
-                return EMPTY;
-            }),
+            mergeMap(word => word.split('')),
+            tap(wordArray => console.log('wordArray', wordArray)),
         );
     }
 
