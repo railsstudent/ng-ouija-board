@@ -5,6 +5,6 @@
 
 <div class="container">
     <span class="letter letter-{{ letter }}" *ngFor="let letter of letters" #letters>{{ letter }}</span>
-    <div class="cursor"></div>
+    <div class="cursor" [style.left]="x + 'px'" [style.top]="y + 'px'"></div>
 </div>
 <!-- <router-outlet></router-outlet> -->

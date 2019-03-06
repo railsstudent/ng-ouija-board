@@ -7,11 +7,12 @@
     padding-right: 0.25rem;
 }
 
-$height: 18px;
+$width: 16px;
+$height: 25px;
 
 .cursor {
     border: 1px solid red;
     position: absolute;
-    width: $height;
+    width: $width;
     height: $height;
 }
