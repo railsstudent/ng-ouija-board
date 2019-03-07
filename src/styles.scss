@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    width: 100vw;
+    height: 100%;
+}
+
+body {
+    display: block;
+    min-height: 100vh;
+    border: 1px solid red;
+}

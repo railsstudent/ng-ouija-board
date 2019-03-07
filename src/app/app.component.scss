@@ -1,0 +1,18 @@
+.container {
+    margin: 1rem;
+    font-size: 1.5rem;
+}
+
+.letter {
+    padding-right: 0.25rem;
+}
+
+$width: 16px;
+$height: 25px;
+
+.cursor {
+    border: 1px solid red;
+    position: absolute;
+    width: $width;
+    height: $height;
+}
