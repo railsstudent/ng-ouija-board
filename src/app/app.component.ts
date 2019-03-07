@@ -20,6 +20,8 @@ export class AppComponent implements OnInit {
     x = 0;
     y = 60;
 
+    answer = '';
+
     constructor(titleService: Title) {
         titleService.setTitle('Ng Ouija Board');
     }
@@ -35,6 +37,7 @@ export class AppComponent implements OnInit {
                 const { x, y } = this.findLetter(letter);
                 this.x = x;
                 this.y = y;
+                this.answer = this.answer + letter;
             });
     }
 
