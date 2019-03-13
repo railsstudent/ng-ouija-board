@@ -1,13 +1,18 @@
 .container {
-    margin: 1rem;
+    margin: 0.75rem;
     font-size: 1.5rem;
+}
+
+.letters {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .letter {
     padding-right: 0.25rem;
 }
 
-$width: 16px;
+$width: 18px;
 $height: 25px;
 
 .cursor {
