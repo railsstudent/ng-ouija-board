@@ -17,9 +17,6 @@ export class AppComponent implements OnInit {
     letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
     spelling$: Observable<string>;
-    x = 0;
-    y = 60;
-
     x$: Observable<string>;
     y$: Observable<string>;
 
@@ -44,7 +41,7 @@ export class AppComponent implements OnInit {
             map(({ x }) => x),
             concatMap(x => concat(timer(300), this.animateService.tween(this.tweenX, x, 1000))),
             tap(dist => (this.tweenX = dist)),
-            tap(dist => console.log('How far does x tween?', dist)),
+            // tap(dist => console.log('How far does x tween?', dist)),
             map(dist => `${dist}px`),
         );
 
@@ -52,7 +49,7 @@ export class AppComponent implements OnInit {
             map(({ y }) => y),
             concatMap(y => concat(timer(300), this.animateService.tween(this.tweenY, y, 1000))),
             tap(dist => (this.tweenY = dist)),
-            tap(dist => console.log('How far does y tween?', dist)),
+            // tap(dist => console.log('How far does y tween?', dist)),
             map(dist => `${dist}px`),
         );
     }
@@ -60,7 +57,7 @@ export class AppComponent implements OnInit {
     findLetter(l: string) {
         const span = this.allLetters.find(a => a.nativeElement.classList.contains(`letter-${l.toUpperCase()}`)) as ElementRef;
         const rect = span.nativeElement.getBoundingClientRect();
-        console.log('letter', l, rect);
+        // console.log('letter', l, rect);
         const { top, left } = rect;
         return { x: left, y: top } as { x: number; y: number };
     }
