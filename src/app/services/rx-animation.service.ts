@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { animationFrameScheduler, defer, timer } from 'rxjs';
+import { animationFrameScheduler, defer, interval } from 'rxjs';
 import { map, takeWhile } from 'rxjs/operators';
 
 @Injectable({
@@ -9,7 +9,7 @@ export class RxAnimationService {
     frames(scheduler = animationFrameScheduler) {
         return defer(() => {
             const start = scheduler.now();
-            return timer(0, 0, animationFrameScheduler).pipe(map(() => scheduler.now() - start));
+            return interval(0, scheduler).pipe(map(() => scheduler.now() - start));
         });
     }
 
