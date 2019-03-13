@@ -35,9 +35,6 @@ THE SOFTWARE.
 @angular/platform-browser
 MIT
 
-@angular/router
-MIT
-
 hammerjs
 MIT
 The MIT License (MIT)
