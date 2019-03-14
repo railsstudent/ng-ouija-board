@@ -5,7 +5,7 @@
 
 <div class="container">
     <div class="letters">
-        <span class="letter letter-{{ letter }}" *ngFor="let letter of letters" #letters>{{ letter }}</span>
+        <span class="letter letter-{{ letter }}" *ngFor="let letter of letters">{{ letter }}</span>
     </div>
-    <div class="cursor" [style.left]="x$ | async" [style.top]="y$ | async"></div>
+    <div class="cursor" [style.left.px]="x$ | async" [style.top.px]="y$ | async"></div>
 </div>
